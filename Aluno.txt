@@ -1,0 +1,29 @@
+package arrays.Desafio;
+
+import java.util.Scanner;
+
+public class Aluno {
+
+	double[] notas;
+	double media;
+	String nome;
+	String info;
+
+	Aluno(Scanner entrada) {
+		System.out.print("Nome do aluno: ");
+		nome = entrada.next();
+		notas = new double[CadastroDeNotas.numAvaliacoes];
+		for (int i = 0; i < notas.length; i++) {
+			System.out.printf("Insira a %d° nota: ", i + 1);
+			this.notas[i] = entrada.nextDouble();
+			media += this.notas[i];
+		}
+		media = media / notas.length;
+		info = nome;
+		for (int i = 0; i < notas.length; i++) {
+			info = info + " | " + String.format("%.2f", notas[i]);
+		}
+		info = info + " | " + String.format("média: %.2f", media);
+	}
+
+}

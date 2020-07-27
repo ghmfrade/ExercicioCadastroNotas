@@ -1,0 +1,27 @@
+package arrays.Desafio;
+
+import java.util.Scanner;
+
+public class CadastroDeNotas {
+
+	Aluno[] matrizAlunos;
+	static int numAvaliacoes;
+	String matrizString;
+
+	CadastroDeNotas(Scanner entrada) {
+		System.out.print("Número de alunos: ");
+		matrizAlunos = new Aluno[entrada.nextInt()];
+		System.out.print("Número de avaliacoes: ");
+		CadastroDeNotas.numAvaliacoes = entrada.nextInt();
+		for (int i = 0; i < matrizAlunos.length; i++) {
+			this.matrizAlunos[i] = new Aluno(entrada);
+		}
+		matrizString = "";
+		for (int i = 0; i < matrizAlunos.length; i++) {
+			matrizString = matrizString + matrizAlunos[i].info + "\n";
+
+		}
+
+	}
+
+}
