@@ -20,7 +20,7 @@ public class Aluno {
 		}
 		media = media / notas.length;
 		info = nome;
-		for (int i = 0; i < notas.length; i++) {
+		for (double nota : notas) {
 			info = info + " | " + String.format("%.2f", notas[i]);
 		}
 		info = info + " | " + String.format("média: %.2f", media);
